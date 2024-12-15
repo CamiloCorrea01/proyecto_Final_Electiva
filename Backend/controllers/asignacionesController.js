@@ -1,3 +1,4 @@
+
 const asignacionService = require('../services/asignacionService');
 
 // Obtener todas las asignaciones de un fondo

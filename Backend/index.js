@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
+const { swaggerUi, specs } = require('./swaggerConfig');
 
 // Rutas
 const fondoRoutes = require('./routes/fondoRoutes');
@@ -39,6 +40,10 @@ app.use('/api/fondos', fondoRoutes);
 app.use('/api/fondos/:fondoId/asignaciones', asignacionesRoutes);
 app.use('/api/alertas', alertaRoutes);
 app.use('/api/usuarios', userRoutes); // Agregar rutas de usuarios
+
+
+// Documentación Swagger
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs));
 
 // Puerto del servidor
 const PORT = process.env.PORT || 5000;
