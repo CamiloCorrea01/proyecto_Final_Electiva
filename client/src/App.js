@@ -24,6 +24,7 @@ const PrivateRoute = ({ children }) => {
   return isAuthenticated() ? children : <Navigate to="/login" />;
 };
 
+
 const App = () => {
   return (
     <Router>

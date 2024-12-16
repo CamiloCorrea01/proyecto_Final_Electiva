@@ -23,6 +23,8 @@ const app = express();
 // Middleware global
 app.use(express.json());
 app.use(cors());
+app.options('*', cors()); // Permitir preflight OPTIONS
+
 
 // Conexión a MongoDB
 mongoose.connect(process.env.MONGO_URI, {

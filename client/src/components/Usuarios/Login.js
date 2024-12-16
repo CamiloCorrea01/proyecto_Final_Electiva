@@ -10,7 +10,7 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    
     try {
       const response = await axios.post('/api/usuarios/login', { correo: email, clave: password });
       localStorage.setItem('token', response.data.token);
