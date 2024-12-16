@@ -1,3 +1,5 @@
+
+
 const Fondo = require('../models/fondoModel');
 
 // Obtener todos los fondos
